@@ -1,0 +1,6 @@
+.quarto/
+outputs/
+*_files/
+*.quarto_ipynb*
+/.quarto/
+**/*.quarto_ipynb
