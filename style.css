@@ -1,0 +1,9 @@
+.math-scroll .math.display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.math-scroll mjx-container {
+  overflow-x: auto;
+  display: block;
+}

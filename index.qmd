@@ -1,6 +1,6 @@
 ---
-title: "Quarto Feature Demo"
-subtitle: "Testing many Quarto capabilities"
+title: "Introduction to  Calculus"
+subtitle: "Summation of the series of functions"
 author: "Yasiru Karunanayaka"
 date: today
 format:
@@ -8,8 +8,11 @@ format:
     theme: cosmo
     toc: true
     toc-depth: 3
-    number-sections: true
+    number-sections: false
     code-fold: false
+    html-math-method: mathjax
+    css: style.css
+
 execute:
   echo: true
   warning: false
@@ -18,198 +21,112 @@ execute:
 
 # Introduction
 
-This page demonstrates many **Quarto features**.
+I have a simple question for you. Have you ever thought, how we can find the **area** of a shape? We know to find the area of a rectangle, we can multiply the length and width. We know the area of a triangle is half of the base times the height. But what if we have a shape that is not a rectangle or a triangle, some weird shape?
 
-Inline math example: $E = mc^2$
-
-Displayed equation:
-
-$$
-\frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u
-$$
-
-## Lists
-
-### Unordered
-
-- Physics
-- Mathematics
-- Simulations
-- Geometry
-
-### Ordered
-
-1. Write page
-2. Preview
-3. Edit
-4. Publish
-
----
-
-# Callouts
+Yeah, Yeah, I know, we can use **Integration**. But the question is, do you understand how integration works? Do you understand the fundamental of integration? If not, then this article is for you. In this article, we will learn about the concept of **calculus** (Integration / Differentiation) and how it works.
 
 ::: {.callout-note}
 ## Note
-Quarto pages are written mostly in Markdown.
+Forget about everything you know about Calculus. Bare with me, and we will re-discover the concept of **calculus** together.
 :::
+
+# I want to find the circumference of a circle
+
+The thing is, **I don't know how to find the circumference of a circle**. I know the formula for the circumference of a circle is $C = 2\pi r$, but I don't know where it came from. So, let's try to find the circumference of a circle without using the formula.
+
+### The good news!
+The one good news is, we know how to find the perimeter of a square. Can we use that knowledge to find the circumference of a circle? Let's try to find the circumference of a circle by approximating it with a square. 
+
+Not good enough? Let's try to approximate it with a regular polygon. The more sides the regular polygon has, the closer it will be to a circle. So, let's try to find the circumference of a circle by approximating it with a regular polygon.
+
+
+<iframe 
+src="https://www.desmos.com/calculator/8ff91afa56?embed" 
+width="100%" 
+height="850" 
+style="border: 1px solid #ccc" 
+
+frameborder=0></iframe>
 
 ::: {.callout-tip}
 ## Tip
-Great for **scientific notes and research logs**.
+You can click on the graph to access the Desmos calculator and play around with the number of sides of the regular polygon to see how it approaches the circumference of the circle.
 :::
 
-::: {.callout-warning}
-## Warning
-Large pages should be split into multiple `.qmd` files.
+OK, let's say we have a regular polygon with $N$ sides inscribed in a circle of radius $r$. And we can draw a triangle from the center of the circle to two adjacent vertices of the polygon. Let the central angle be $\Delta\theta$. Then the length of each side of the regular polygon is given by:
+
+$$
+\Delta s = 2 r\sin\left(\frac{\Delta\theta}{2}\right) 
+$$
+
+That's sorted out! Now, we can find the perimeter of the regular polygon by summing up the lengths of all the sides:
+
+$$
+C_N=\sum_{k=1}^{N} \Delta s=N\Delta s
+$$
+
+$$
+C_N = N\Delta s
+$$
+
+Yeah! we can just say $C_N = N\Delta s$ because all the sides of the regular polygon are equal. But we can also write it as a summation, so we can generalize the theory later in the article.
+
+::: {.callout-note}
+### Reference
+
+If you confised about how I simplified the summation, you can check out this article:
+
+[Paul's Online Math Notes – Summation Notation](https://tutorial.math.lamar.edu/classes/calci/summationnotation.aspx)
 :::
 
----
-
-# Table Example
-
-| Quantity | Symbol | Meaning |
-|---|---|---|
-| Frequency | $f$ | cycles per second |
-| Angular frequency | $\omega$ | $2\pi f$ |
-| Wavelength | $\lambda$ | spatial period |
-
----
-
-# Complex Equation
+Now, we can write the perimeter of the regular polygon as:
 
 $$
-\beta = k_0\sqrt{(1+X_s^2-R_s^2-2jR_sX_s)}
+C_N =  2r N \sin\left(\frac{\Delta\theta}{2}\right)
 $$
 
-Aligned equations:
+We clearly see that $C_N$ is not the circumference of the circle, but we can see that as $N$ increases, $C_N$ approaches the circumference of the circle. So, shall we say that:
 
 $$
-\begin{aligned}
-z(t) &= E(t)e^{i\Omega t} \\
-E(t) &= E_0 e^{\phi t}
-\end{aligned}
+C = \lim_{N \to \infty} C_N
 $$
 
----
-
-# Code Block Example
-
-```python
-import numpy as np
-
-x = np.linspace(0,10,5)
-y = x**2
-
-print(y)
-```
-
----
-
-# Python Plot Example
-
-```{python}
-import numpy as np
-import matplotlib.pyplot as plt
-
-x = np.linspace(0,10,200)
-y = np.sin(x)*np.exp(-0.1*x)
-
-plt.plot(x,y)
-plt.title("Damped Oscillation")
-plt.xlabel("x")
-plt.ylabel("y")
-plt.grid(True)
-plt.show()
-```
-
----
-
-# Columns Layout
-
-::: {.columns}
-
-::: {.column width="50%"}
-
-## Left Side
-
-Some notes:
-
-- wave propagation
-- damping
-- phase
-
 $$
-x(t) = A\cos(\omega t)
+C = 2r \lim_{N \to \infty} N \sin\left(\frac{\Delta\theta}{2}\right)
 $$
 
+This is interesting. Because we can see that $2r$ is a constant for all values of $N$. The only term that is changing is $\lim_{N \to \infty} N \sin\left(\frac{\Delta\theta}{2}\right)$. So, we can focus on that term. Let's call that term $\beta_N$.
+
+
+
+As $N$ increases, the regular $N$-gon hugs the circle more closely, and $\beta_N$ approaches a limit.
+
+For many centuries, mathematicians tried to estimate this limit using polygon ideas like this. Archimedes’ method in the 3rd century BCE is the classical example. 
+
+::: {.callout-note}
+Reference: [MacTutor – A history of Pi](https://mathshistory.st-andrews.ac.uk/HistTopics/Pi_through_the_ages/)
 :::
 
-::: {.column width="50%"}
+### Example values
 
-## Right Side
+| $N$ | $\beta_N = N\sin(\pi/N)$ | Error $= \pi-\beta_N$ |
+|---:|---:|---:|
+| 5 | 2.9389262615 | 0.2026663921 |
+| 20 | 3.1286893008 | 0.0129033528 |
+| 135 | 3.1413091105 | 0.0002835431 |
+| 1000 | 3.1415874859 | 0.0000051677 |
 
-More text here.
+Using the current computing power, and optimized algorithms, we have been able to calculate $\pi$ to over 62 trillion digits!
 
-You can place equations or figures.
 
+
+::: {.callout-note .math-scroll}
 $$
-y(t) = A\sin(\omega t)
+\pi = 3.1415926535897932384626433832795028841971693993751058209749445923078628034825342117067982148086513282306647093844609550582231725359408128481117450284102701938521105559644622948954930381964428810975665933446128475648233786783165271201909145648566923460348610454326648213393607260249141273724587006606315588174881520920962829254091715364367892590360011330530548820466521384146951941511609433057270365759591953092186117381932611793105118548074462379962749567351885752724891227938183011949129833673362440656643086021394946395224737190702179860943702770539217176293176752384674818467669405132000568127145263560827785771342757789609173637178721468440901224953430146549585371050792279689258923542019956112129021960864034418159813629774771309960518707211349999998372978049951059731732816096318595024459455346908302642522308253344685035261931188171010003137838752886587533208381420617177669147303598253490428755468731159562863882353787593751957781857780532171226806613001927876611195909216420198938095257201065485863278865936153381827968230301952035301852968995773622599413891249721775283479131515574857242454150695950829533116861727855889075098381754637464939319255060400927701671139009848824012858361603563707660104710181942955596198946767837449448255379774726847104047534646208046684259069491293313677028989152104752162056966024058038150193511253382430035587640247496473263914199272604269922796782354781636009341721641219924586315030286182974555706749838505494588586926995690927210797509302955321165344987202755960236480665499119881834797753566369807426542527862551818417574672890977772793800 \ldots
 $$
-
 :::
 
-:::
-
----
-
-# HTML Example
-
-<div style="padding:1rem;border:1px solid gray;border-radius:8px">
-This is a custom HTML box inside Quarto.
-</div>
-
----
-
-# Desmos Embed
-
-<iframe
- src="https://www.desmos.com/calculator/abcd1234?embed"
- width="700"
- height="400"
- style="border:1px solid #ccc"
- frameborder=0>
-</iframe>
-
-Replace `abcd1234` with your own Desmos graph ID.
-
----
-
-# Footnote Example
-
-This sentence has a footnote.[^1]
-
-[^1]: Quarto supports Markdown footnotes.
-
----
-
-# Quote
-
-> Mathematics is the language in which God has written the universe.
-
----
-
-# Conclusion
-
-This page demonstrated:
-
-- Markdown
-- equations
-- tables
-- callouts
-- Python execution
-- plots
-- HTML
-- Desmos embedding
-- layout columns
-
-You can use Quarto as a **scientific notebook or website system**.
+Hence, we can say that the circumference of a circle is given by:
+$$
+\boxed{C = 2\pi r}
+$$

@@ -1,0 +1,215 @@
+---
+title: "Quarto Feature Demo"
+subtitle: "Testing many Quarto capabilities"
+author: "Yasiru Karunanayaka"
+date: today
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: false
+execute:
+  echo: true
+  warning: false
+  error: false
+---
+
+# Introduction
+
+This page demonstrates many **Quarto features**.
+
+Inline math example: $E = mc^2$
+
+Displayed equation:
+
+$$
+\frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u
+$$
+
+## Lists
+
+### Unordered
+
+- Physics
+- Mathematics
+- Simulations
+- Geometry
+
+### Ordered
+
+1. Write page
+2. Preview
+3. Edit
+4. Publish
+
+---
+
+# Callouts
+
+::: {.callout-note}
+## Note
+Quarto pages are written mostly in Markdown.
+:::
+
+::: {.callout-tip}
+## Tip
+Great for **scientific notes and research logs**.
+:::
+
+::: {.callout-warning}
+## Warning
+Large pages should be split into multiple `.qmd` files.
+:::
+
+---
+
+# Table Example
+
+| Quantity | Symbol | Meaning |
+|---|---|---|
+| Frequency | $f$ | cycles per second |
+| Angular frequency | $\omega$ | $2\pi f$ |
+| Wavelength | $\lambda$ | spatial period |
+
+---
+
+# Complex Equation
+
+$$
+\beta = k_0\sqrt{(1+X_s^2-R_s^2-2jR_sX_s)}
+$$
+
+Aligned equations:
+
+$$
+\begin{aligned}
+z(t) &= E(t)e^{i\Omega t} \\
+E(t) &= E_0 e^{\phi t}
+\end{aligned}
+$$
+
+---
+
+# Code Block Example
+
+```python
+import numpy as np
+
+x = np.linspace(0,10,5)
+y = x**2
+
+print(y)
+```
+
+---
+
+# Python Plot Example
+
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0,10,200)
+y = np.sin(x)*np.exp(-0.1*x)
+
+plt.plot(x,y)
+plt.title("Damped Oscillation")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.grid(True)
+plt.show()
+```
+
+---
+
+# Columns Layout
+
+::: {.columns}
+
+::: {.column width="50%"}
+
+## Left Side
+
+Some notes:
+
+- wave propagation
+- damping
+- phase
+
+$$
+x(t) = A\cos(\omega t)
+$$
+
+:::
+
+::: {.column width="50%"}
+
+## Right Side
+
+More text here.
+
+You can place equations or figures.
+
+$$
+y(t) = A\sin(\omega t)
+$$
+
+:::
+
+:::
+
+---
+
+# HTML Example
+
+<div style="padding:1rem;border:1px solid gray;border-radius:8px">
+This is a custom HTML box inside Quarto.
+</div>
+
+---
+
+# Desmos Embed
+
+<iframe
+ src="https://www.desmos.com/calculator/abcd1234?embed"
+ width="700"
+ height="400"
+ style="border:1px solid #ccc"
+ frameborder=0>
+</iframe>
+
+Replace `abcd1234` with your own Desmos graph ID.
+
+---
+
+# Footnote Example
+
+This sentence has a footnote.[^1]
+
+[^1]: Quarto supports Markdown footnotes.
+
+---
+
+# Quote
+
+> Mathematics is the language in which God has written the universe.
+
+---
+
+# Conclusion
+
+This page demonstrated:
+
+- Markdown
+- equations
+- tables
+- callouts
+- Python execution
+- plots
+- HTML
+- Desmos embedding
+- layout columns
+
+You can use Quarto as a **scientific notebook or website system**.

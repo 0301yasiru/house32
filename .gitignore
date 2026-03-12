@@ -4,3 +4,6 @@ outputs/
 *.quarto_ipynb*
 /.quarto/
 **/*.quarto_ipynb
+.env/
+.jupyter_cache/
+.ipynb_checkpoints/
