@@ -127,6 +127,8 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#lets-try-an-example" id="toc-lets-try-an-example" class="nav-link" data-scroll-target="#lets-try-an-example">Let’s try an example</a></li>
   </ul></li>
+  <li><a href="#symbolizing-the-process" id="toc-symbolizing-the-process" class="nav-link" data-scroll-target="#symbolizing-the-process">Symbolizing the process</a></li>
+  <li><a href="#does-this-process-has-a-reverse" id="toc-does-this-process-has-a-reverse" class="nav-link" data-scroll-target="#does-this-process-has-a-reverse">Does this process has a reverse?</a></li>
   </ul>
 </nav>
     </div>
@@ -431,9 +433,49 @@ A = \frac{27}{2}
 <p>If we want to find a arbitary shape area, we can devide it to <strong>rectangles</strong> (or <strong>trapezoids</strong>), find the area of each rectangle, and sum them up. As we increase the number of rectangles (i.e making the rectangles <strong>infinitesimally small</strong>), the approximation gets better and better, and in the limit, we get the exact area of the shape.</p>
 </div>
 </div>
-
-
+<hr>
 </section>
+</section>
+<section id="symbolizing-the-process" class="level1">
+<h1>Symbolizing the process</h1>
+<p>We learned that we can find the area under the curve of a function <span class="math inline">\(f(x)\)</span> between <span class="math inline">\(x=a\)</span> and <span class="math inline">\(x=b\)</span> by using the summation, and taking the limit as the number of rectangles approaches infinity. This process is the basis of the <strong>definite integral</strong>. It is a good idea to give this a symbol, so we can use it to find the area under the curve of any function.</p>
+<p>Let’s denote the area under the curve of a function <span class="math inline">\(f(x)\)</span> between <span class="math inline">\(x=a\)</span> and <span class="math inline">\(x=b\)</span> as:</p>
+<p><span class="math display">\[
+\boxed{A=\lim_{\Delta x \to 0} \sum_{k=1}^{N} f\left(a + k \Delta x\right) \Delta x = \int_a^b f(x) dx}
+\]</span></p>
+<p>Finally, Let’s define the <strong>indefinite integral</strong> as: <span class="math display">\[
+F(x) = \int_0^x f(t) dt
+\]</span></p>
+<p><span class="math display">\[
+\boxed{F(x) = \int f(t) dt + C}
+\]</span></p>
+<p>Here, the first term (indefinite integral) tells us the area under the curve in the interval <span class="math inline">\([0,x]\)</span>, and the second term <span class="math inline">\(C\)</span> (constant of integration) tells us about the interval <span class="math inline">\([-\infty, 0]\)</span>.</p>
+<hr>
+</section>
+<section id="does-this-process-has-a-reverse" class="level1">
+<h1>Does this process has a reverse?</h1>
+<p>Let’s write the <span class="math inline">\(F(x)\)</span>, temporely ignoring the limit,</p>
+<p><span class="math display">\[
+F(x) = \sum_{k=1}^{N} f\left(k \Delta x\right) \Delta x
+\]</span></p>
+<p><span class="math display">\[
+F(x+\Delta x) = \sum_{k=1}^{N+1} f\left(k \Delta x\right) \Delta x = \sum_{k=1}^{N} f\left(k \Delta x\right) \Delta x + f\left((N+1) \Delta x\right) \Delta x
+\]</span></p>
+<p><span class="math display">\[
+F(x+\Delta x) = F(x) + f\left((N+1) \Delta x\right) \Delta x
+\]</span></p>
+<p>We can identify that <span class="math inline">\(f\left((N+1) \Delta x\right)\)</span> is the value of the function at <span class="math inline">\(x+\Delta x\)</span>. So, we can write it as: <span class="math display">\[
+F(x+\Delta x) = F(x) + f\left(x+\Delta x\right) \Delta x
+\]</span></p>
+<p><span class="math display">\[
+\lim_{\Delta x \to 0} \frac{F(x+\Delta x) - F(x)}{\Delta x} = \lim_{\Delta x \to 0} f\left(x+\Delta x\right) = f(x)
+\]</span></p>
+<p><span class="math display">\[
+\boxed{f(x) = \lim_{\Delta x \to 0} \frac{F(x+\Delta x) - F(x)}{\Delta x} = \frac{dF(x)}{dx}}
+\]</span></p>
+<p>Let’s call this process of finding the reverse of the integration as <strong>differentiation</strong>. We can also call it the <strong>derivative</strong> of <span class="math inline">\(F(x)\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
+
+
 </section>
 
 </main> <!-- /main -->
