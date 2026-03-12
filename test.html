@@ -9,7 +9,7 @@
 <meta name="author" content="Yasiru Karunanayaka">
 <meta name="dcterms.date" content="2026-03-12">
 
-<title>Introduction to Calculus – Just Geometry</title>
+<title>Quarto Feature Demo – Just Geometry</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -24,6 +24,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -103,7 +138,6 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="quarto-light">
@@ -118,12 +152,25 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#i-want-to-find-the-circumference-of-a-circle" id="toc-i-want-to-find-the-circumference-of-a-circle" class="nav-link" data-scroll-target="#i-want-to-find-the-circumference-of-a-circle">I want to find the circumference of a circle</a>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a>
   <ul class="collapse">
-  <li><a href="#the-good-news" id="toc-the-good-news" class="nav-link" data-scroll-target="#the-good-news">The good news!</a></li>
-  <li><a href="#example-values" id="toc-example-values" class="nav-link" data-scroll-target="#example-values">Example values</a></li>
+  <li><a href="#lists" id="toc-lists" class="nav-link" data-scroll-target="#lists"><span class="header-section-number">1.1</span> Lists</a>
+  <ul class="collapse">
+  <li><a href="#unordered" id="toc-unordered" class="nav-link" data-scroll-target="#unordered"><span class="header-section-number">1.1.1</span> Unordered</a></li>
+  <li><a href="#ordered" id="toc-ordered" class="nav-link" data-scroll-target="#ordered"><span class="header-section-number">1.1.2</span> Ordered</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#callouts" id="toc-callouts" class="nav-link" data-scroll-target="#callouts"><span class="header-section-number">2</span> Callouts</a></li>
+  <li><a href="#table-example" id="toc-table-example" class="nav-link" data-scroll-target="#table-example"><span class="header-section-number">3</span> Table Example</a></li>
+  <li><a href="#complex-equation" id="toc-complex-equation" class="nav-link" data-scroll-target="#complex-equation"><span class="header-section-number">4</span> Complex Equation</a></li>
+  <li><a href="#code-block-example" id="toc-code-block-example" class="nav-link" data-scroll-target="#code-block-example"><span class="header-section-number">5</span> Code Block Example</a></li>
+  <li><a href="#python-plot-example" id="toc-python-plot-example" class="nav-link" data-scroll-target="#python-plot-example"><span class="header-section-number">6</span> Python Plot Example</a></li>
+  <li><a href="#columns-layout" id="toc-columns-layout" class="nav-link" data-scroll-target="#columns-layout"><span class="header-section-number">7</span> Columns Layout</a></li>
+  <li><a href="#html-example" id="toc-html-example" class="nav-link" data-scroll-target="#html-example"><span class="header-section-number">8</span> HTML Example</a></li>
+  <li><a href="#desmos-embed" id="toc-desmos-embed" class="nav-link" data-scroll-target="#desmos-embed"><span class="header-section-number">9</span> Desmos Embed</a></li>
+  <li><a href="#footnote-example" id="toc-footnote-example" class="nav-link" data-scroll-target="#footnote-example"><span class="header-section-number">10</span> Footnote Example</a></li>
+  <li><a href="#quote" id="toc-quote" class="nav-link" data-scroll-target="#quote"><span class="header-section-number">11</span> Quote</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">12</span> Conclusion</a></li>
   </ul>
 </nav>
     </div>
@@ -132,8 +179,8 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Introduction to Calculus</h1>
-<p class="subtitle lead">Summation of the series of functions</p>
+<h1 class="title">Quarto Feature Demo</h1>
+<p class="subtitle lead">Testing many Quarto capabilities</p>
 </div>
 
 
@@ -162,10 +209,39 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
-<p>I have a simple question for you. Have you ever thought, how we can find the <strong>area</strong> of a shape? We know to find the area of a rectangle, we can multiply the length and width. We know the area of a triangle is half of the base times the height. But what if we have a shape that is not a rectangle or a triangle, some weird shape?</p>
-<p>Yeah, Yeah, I know, we can use <strong>Integration</strong>. But the question is, do you understand how integration works? Do you understand the fundamental of integration? If not, then this article is for you. In this article, we will learn about the concept of <strong>calculus</strong> (Integration / Differentiation) and how it works.</p>
+<section id="introduction" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>This page demonstrates many <strong>Quarto features</strong>.</p>
+<p>Inline math example: <span class="math inline">\(E = mc^2\)</span></p>
+<p>Displayed equation:</p>
+<p><span class="math display">\[
+\frac{\partial^2 u}{\partial t^2} = c^2 \nabla^2 u
+\]</span></p>
+<section id="lists" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="lists"><span class="header-section-number">1.1</span> Lists</h2>
+<section id="unordered" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="unordered"><span class="header-section-number">1.1.1</span> Unordered</h3>
+<ul>
+<li>Physics</li>
+<li>Mathematics</li>
+<li>Simulations</li>
+<li>Geometry</li>
+</ul>
+</section>
+<section id="ordered" class="level3" data-number="1.1.2">
+<h3 data-number="1.1.2" class="anchored" data-anchor-id="ordered"><span class="header-section-number">1.1.2</span> Ordered</h3>
+<ol type="1">
+<li>Write page</li>
+<li>Preview</li>
+<li>Edit</li>
+<li>Publish</li>
+</ol>
+<hr>
+</section>
+</section>
+</section>
+<section id="callouts" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Callouts</h1>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -176,19 +252,9 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Forget about everything you know about Calculus. Bare with me, and we will re-discover the concept of <strong>calculus</strong> together.</p>
+<p>Quarto pages are written mostly in Markdown.</p>
 </div>
 </div>
-</section>
-<section id="i-want-to-find-the-circumference-of-a-circle" class="level1">
-<h1>I want to find the circumference of a circle</h1>
-<p>The thing is, <strong>I don’t know how to find the circumference of a circle</strong>. I know the formula for the circumference of a circle is <span class="math inline">\(C = 2\pi r\)</span>, but I don’t know where it came from. So, let’s try to find the circumference of a circle without using the formula.</p>
-<section id="the-good-news" class="level3">
-<h3 class="anchored" data-anchor-id="the-good-news">The good news!</h3>
-<p>The one good news is, we know how to find the perimeter of a square. Can we use that knowledge to find the circumference of a circle? Let’s try to find the circumference of a circle by approximating it with a square.</p>
-<p>Not good enough? Let’s try to approximate it with a regular polygon. The more sides the regular polygon has, the closer it will be to a circle. So, let’s try to find the circumference of a circle by approximating it with a regular polygon.</p>
-<iframe src="https://www.desmos.com/calculator/8ff91afa56?embed" width="100%" height="850" style="border: 1px solid #ccc" frameborder="0">
-</iframe>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -199,121 +265,184 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can click on the graph to access the Desmos calculator and play around with the number of sides of the regular polygon to see how it approaches the circumference of the circle.</p>
+<p>Great for <strong>scientific notes and research logs</strong>.</p>
 </div>
 </div>
-<p>OK, let’s say we have a regular polygon with <span class="math inline">\(N\)</span> sides inscribed in a circle of radius <span class="math inline">\(r\)</span>. And we can draw a triangle from the center of the circle to two adjacent vertices of the polygon. Let the central angle be <span class="math inline">\(\Delta\theta\)</span>. Then the length of each side of the regular polygon is given by:</p>
-<p><span class="math display">\[
-\Delta s = 2 r\sin\left(\frac{\Delta\theta}{2}\right)
-\]</span></p>
-<p>That’s sorted out! Now, we can find the perimeter of the regular polygon by summing up the lengths of all the sides:</p>
-<p><span class="math display">\[
-C_N=\sum_{k=1}^{N} \Delta s=N\Delta s
-\]</span></p>
-<p><span class="math display">\[
-C_N = N\Delta s
-\]</span></p>
-<p>Yeah! we can just say <span class="math inline">\(C_N = N\Delta s\)</span> because all the sides of the regular polygon are equal. But we can also write it as a summation, so we can generalize the theory later in the article.</p>
-<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>Reference
+<span class="screen-reader-only">Warning</span>Warning
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you confised about how I simplified the summation, you can check out this article:</p>
-<p><a href="https://tutorial.math.lamar.edu/classes/calci/summationnotation.aspx">Paul’s Online Math Notes – Summation Notation</a></p>
+<p>Large pages should be split into multiple <code>.qmd</code> files.</p>
 </div>
 </div>
-<p>Now, we can write the perimeter of the regular polygon as:</p>
-<p><span class="math display">\[
-C_N =  2r N \sin\left(\frac{\Delta\theta}{2}\right)
-\]</span></p>
-<p>We clearly see that <span class="math inline">\(C_N\)</span> is not the circumference of the circle, but we can see that as <span class="math inline">\(N\)</span> increases, <span class="math inline">\(C_N\)</span> approaches the circumference of the circle. So, shall we say that:</p>
-<p><span class="math display">\[
-C = \lim_{N \to \infty} C_N
-\]</span></p>
-<p><span class="math display">\[
-C = 2r \lim_{N \to \infty} N \sin\left(\frac{\Delta\theta}{2}\right)
-\]</span></p>
-<p>This is interesting. Because we can see that <span class="math inline">\(2r\)</span> is a constant for all values of <span class="math inline">\(N\)</span>. The only term that is changing is <span class="math inline">\(\lim_{N \to \infty} N \sin\left(\frac{\Delta\theta}{2}\right)\)</span>. So, we can focus on that term. Let’s call that term <span class="math inline">\(\beta_N\)</span>.</p>
-<p>As <span class="math inline">\(N\)</span> increases, the regular <span class="math inline">\(N\)</span>-gon hugs the circle more closely, and <span class="math inline">\(\beta_N\)</span> approaches a limit.</p>
-<p>For many centuries, mathematicians tried to estimate this limit using polygon ideas like this. Archimedes’ method in the 3rd century BCE is the classical example.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Reference: <a href="https://mathshistory.st-andrews.ac.uk/HistTopics/Pi_through_the_ages/">MacTutor – A history of Pi</a></p>
-</div>
-</div>
+<hr>
 </section>
-<section id="example-values" class="level3">
-<h3 class="anchored" data-anchor-id="example-values">Example values</h3>
+<section id="table-example" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Table Example</h1>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: right;"><span class="math inline">\(N\)</span></th>
-<th style="text-align: right;"><span class="math inline">\(\beta_N = N\sin(\pi/N)\)</span></th>
-<th style="text-align: right;">Error <span class="math inline">\(= \pi-\beta_N\)</span></th>
+<th>Quantity</th>
+<th>Symbol</th>
+<th>Meaning</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">2.9389262615</td>
-<td style="text-align: right;">0.2026663921</td>
+<td>Frequency</td>
+<td><span class="math inline">\(f\)</span></td>
+<td>cycles per second</td>
 </tr>
 <tr class="even">
-<td style="text-align: right;">20</td>
-<td style="text-align: right;">3.1286893008</td>
-<td style="text-align: right;">0.0129033528</td>
+<td>Angular frequency</td>
+<td><span class="math inline">\(\omega\)</span></td>
+<td><span class="math inline">\(2\pi f\)</span></td>
 </tr>
 <tr class="odd">
-<td style="text-align: right;">135</td>
-<td style="text-align: right;">3.1413091105</td>
-<td style="text-align: right;">0.0002835431</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">1000</td>
-<td style="text-align: right;">3.1415874859</td>
-<td style="text-align: right;">0.0000051677</td>
+<td>Wavelength</td>
+<td><span class="math inline">\(\lambda\)</span></td>
+<td>spatial period</td>
 </tr>
 </tbody>
 </table>
-<p>Using the current computing power, and optimized algorithms, we have been able to calculate <span class="math inline">\(\pi\)</span> to over 62 trillion digits!</p>
-<div class="math-scroll callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<hr>
+</section>
+<section id="complex-equation" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Complex Equation</h1>
 <p><span class="math display">\[
-\pi = 3.1415926535897932384626433832795028841971693993751058209749445923078628034825342117067982148086513282306647093844609550582231725359408128481117450284102701938521105559644622948954930381964428810975665933446128475648233786783165271201909145648566923460348610454326648213393607260249141273724587006606315588174881520920962829254091715364367892590360011330530548820466521384146951941511609433057270365759591953092186117381932611793105118548074462379962749567351885752724891227938183011949129833673362440656643086021394946395224737190702179860943702770539217176293176752384674818467669405132000568127145263560827785771342757789609173637178721468440901224953430146549585371050792279689258923542019956112129021960864034418159813629774771309960518707211349999998372978049951059731732816096318595024459455346908302642522308253344685035261931188171010003137838752886587533208381420617177669147303598253490428755468731159562863882353787593751957781857780532171226806613001927876611195909216420198938095257201065485863278865936153381827968230301952035301852968995773622599413891249721775283479131515574857242454150695950829533116861727855889075098381754637464939319255060400927701671139009848824012858361603563707660104710181942955596198946767837449448255379774726847104047534646208046684259069491293313677028989152104752162056966024058038150193511253382430035587640247496473263914199272604269922796782354781636009341721641219924586315030286182974555706749838505494588586926995690927210797509302955321165344987202755960236480665499119881834797753566369807426542527862551818417574672890977772793800 \ldots
+\beta = k_0\sqrt{(1+X_s^2-R_s^2-2jR_sX_s)}
 \]</span></p>
+<p>Aligned equations:</p>
+<p><span class="math display">\[
+\begin{aligned}
+z(t) &amp;= E(t)e^{i\Omega t} \\
+E(t) &amp;= E_0 e^{\phi t}
+\end{aligned}
+\]</span></p>
+<hr>
+</section>
+<section id="code-block-example" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Code Block Example</h1>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">5</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> x<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(y)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<hr>
+</section>
+<section id="python-plot-example" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Python Plot Example</h1>
+<div id="8d41ffd3" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>,<span class="dv">10</span>,<span class="dv">200</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(x)<span class="op">*</span>np.exp(<span class="op">-</span><span class="fl">0.1</span><span class="op">*</span>x)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.plot(x,y)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Damped Oscillation"</span>)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">"x"</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">"y"</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="test_files/figure-html/cell-2-output-1.png" width="600" height="449" class="figure-img"></p>
+</figure>
 </div>
 </div>
-<p>Hence, we can say that the circumference of a circle is given by: <span class="math display">\[
-\boxed{C = 2\pi r}
+</div>
+<hr>
+</section>
+<section id="columns-layout" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Columns Layout</h1>
+<div class="columns">
+<div class="column" style="width:50%;">
+<section id="left-side" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="left-side"><span class="header-section-number">7.1</span> Left Side</h2>
+<p>Some notes:</p>
+<ul>
+<li>wave propagation</li>
+<li>damping</li>
+<li>phase</li>
+</ul>
+<p><span class="math display">\[
+x(t) = A\cos(\omega t)
 \]</span></p>
+</section>
+</div><div class="column" style="width:50%;">
+<section id="right-side" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="right-side"><span class="header-section-number">7.2</span> Right Side</h2>
+<p>More text here.</p>
+<p>You can place equations or figures.</p>
+<p><span class="math display">\[
+y(t) = A\sin(\omega t)
+\]</span></p>
+</section>
+</div>
+</div>
+<hr>
+</section>
+<section id="html-example" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> HTML Example</h1>
+<div style="padding:1rem;border:1px solid gray;border-radius:8px">
+<p>This is a custom HTML box inside Quarto.</p>
+</div>
+<hr>
+</section>
+<section id="desmos-embed" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Desmos Embed</h1>
+<iframe src="https://www.desmos.com/calculator/abcd1234?embed" width="700" height="400" style="border:1px solid #ccc" frameborder="0">
+</iframe>
+<p>Replace <code>abcd1234</code> with your own Desmos graph ID.</p>
+<hr>
+</section>
+<section id="footnote-example" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Footnote Example</h1>
+<p>This sentence has a footnote.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<hr>
+</section>
+<section id="quote" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Quote</h1>
+<blockquote class="blockquote">
+<p>Mathematics is the language in which God has written the universe.</p>
+</blockquote>
+<hr>
+</section>
+<section id="conclusion" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Conclusion</h1>
+<p>This page demonstrated:</p>
+<ul>
+<li>Markdown</li>
+<li>equations</li>
+<li>tables</li>
+<li>callouts</li>
+<li>Python execution</li>
+<li>plots</li>
+<li>HTML</li>
+<li>Desmos embedding</li>
+<li>layout columns</li>
+</ul>
+<p>You can use Quarto as a <strong>scientific notebook or website system</strong>.</p>
 
 
 </section>
-</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Quarto supports Markdown footnotes.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
