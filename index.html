@@ -102,7 +102,6 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -123,6 +122,10 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#the-good-news" id="toc-the-good-news" class="nav-link" data-scroll-target="#the-good-news">The good news!</a></li>
   <li><a href="#example-values" id="toc-example-values" class="nav-link" data-scroll-target="#example-values">Example values</a></li>
+  </ul></li>
+  <li><a href="#shall-we-try-to-find-the-area-of-a-function" id="toc-shall-we-try-to-find-the-area-of-a-function" class="nav-link" data-scroll-target="#shall-we-try-to-find-the-area-of-a-function">Shall we try to find the area of a function?</a>
+  <ul class="collapse">
+  <li><a href="#lets-try-an-example" id="toc-lets-try-an-example" class="nav-link" data-scroll-target="#lets-try-an-example">Let’s try an example</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -179,6 +182,7 @@ window.Quarto = {
 <p>Forget about everything you know about Calculus. Bare with me, and we will re-discover the concept of <strong>calculus</strong> together.</p>
 </div>
 </div>
+<hr>
 </section>
 <section id="i-want-to-find-the-circumference-of-a-circle" class="level1">
 <h1>I want to find the circumference of a circle</h1>
@@ -187,15 +191,15 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="the-good-news">The good news!</h3>
 <p>The one good news is, we know how to find the perimeter of a square. Can we use that knowledge to find the circumference of a circle? Let’s try to find the circumference of a circle by approximating it with a square.</p>
 <p>Not good enough? Let’s try to approximate it with a regular polygon. The more sides the regular polygon has, the closer it will be to a circle. So, let’s try to find the circumference of a circle by approximating it with a regular polygon.</p>
-<iframe src="https://www.desmos.com/calculator/8ff91afa56?embed" width="100%" height="850" style="border: 1px solid #ccc" frameborder="0">
+<iframe src="https://www.desmos.com/calculator/8ff91afa56?embed" style="width:100%; aspect-ratio:1/1; border: 1px solid #ccc" frameborder="0">
 </iframe>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Tip</span>Tip
+<span class="screen-reader-only">Note</span>Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -263,7 +267,7 @@ Note
 <tr class="header">
 <th style="text-align: right;"><span class="math inline">\(N\)</span></th>
 <th style="text-align: right;"><span class="math inline">\(\beta_N = N\sin(\pi/N)\)</span></th>
-<th style="text-align: right;">Error <span class="math inline">\(= \pi-\beta_N\)</span></th>
+<th style="text-align: right;"><span class="math inline">\(\pi-\beta_N\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -308,6 +312,125 @@ Note
 <p>Hence, we can say that the circumference of a circle is given by: <span class="math display">\[
 \boxed{C = 2\pi r}
 \]</span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lesson learned
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If we want to find a arbitary curve’s length, we can devide it to <strong>linear segments</strong>, find the length of each segment, and sum them up. As we increase the number of segments (i.e making the segments <strong>infinitesimally small</strong>), the approximation gets better and better, and in the limit, we get the exact length of the curve.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="shall-we-try-to-find-the-area-of-a-function" class="level1">
+<h1>Shall we try to find the area of a function?</h1>
+<p>Let’s say we have a function <span class="math inline">\(f(x)\)</span>, and we want to find the area under the curve of that function between <span class="math inline">\(x=a\)</span> and <span class="math inline">\(x=b\)</span>. It is true that we don’t know the formula for the area. But the good news is, <strong>we know how to find the area of a rectangle</strong>.</p>
+<p>Using the lesson we learned from the previous section, we can divide the area under the curve into <strong>rectangles</strong>. The more rectangles we use, the better the approximation. So, let’s try to find the area under the curve by approximating it with rectangles.</p>
+<iframe src="https://www.desmos.com/calculator/ec95c86735?embed" style="width:100%; aspect-ratio:2/1; border: 1px solid #ccc" frameborder="0">
+</iframe>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can click on the graph to access the Desmos calculator and play around with the number divisions to see how it approaches the area under the curve. It has trepizodial rule as well, so you can play around with that as well.</p>
+</div>
+</div>
+<p>Let’s say the interval <span class="math inline">\([a,b]\)</span> is divided into <span class="math inline">\(N\)</span> subintervals of equal width <span class="math inline">\(\Delta x = \frac{b-a}{N}\)</span>. Then, the area under the curve can be approximated by the sum of the areas of the rectangles:</p>
+<span class="math display">\[\begin{aligned}
+A_N &amp;= \Delta A_1 + \Delta A_2 + \ldots + \Delta A_N \\
+    &amp;= f(a + \Delta x) \Delta x + f(a + 2\Delta x) \Delta x + \ldots + f(a + N\Delta x) \Delta x\\
+    &amp;= \sum_{k=1}^{N} f(a + k\Delta x) \Delta x\\
+    &amp;= \sum_{k=1}^{N} f\left(a + k \frac{b-a}{N}\right) \frac{b-a}{N}
+\end{aligned}\]</span>
+<p>Finally, let’s make the width of the rectangles <strong>infinitesimally small</strong> by taking the limit as <span class="math inline">\(N\)</span> approaches infinity:</p>
+<p><span class="math display">\[
+A = \lim_{N \to \infty} \sum_{k=1}^{N} f\left(a + k \frac{b-a}{N}\right) \frac{b-a}{N}
+\]</span></p>
+<section id="lets-try-an-example" class="level2">
+<h2 class="anchored" data-anchor-id="lets-try-an-example">Let’s try an example</h2>
+<p>Let’s say we want to find the area under the curve of the function <span class="math inline">\(f(x) = -x^2 + 5x - 1\)</span> between <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=4\)</span>. Then, we can write the area as:</p>
+<p><span class="math display">\[
+A = \lim_{N \to \infty} \sum_{k=1}^{N} f\left(1 + k \frac{4-1}{N}\right) \frac{4-1}{N} = \lim_{N \to \infty} \sum_{k=1}^{N} f\left(1 + \frac{3k}{N}\right) \frac{3}{N}
+\]</span></p>
+<p>Then, we can find <span class="math inline">\(f\left(1 + \frac{3k}{N}\right)\)</span> and substitute it back into the summation:</p>
+<span class="math display">\[\begin{aligned}
+
+f\left(1 + \frac{3k}{N}\right) &amp;= -\left(1 + \frac{3k}{N}\right)^2 + 5\left(1 + \frac{3k}{N}\right) - 1 \\
+&amp;= -\left(1 + \frac{6k}{N} + \frac{9k^2}{N^2}\right) + 5\left(1 + \frac{3k}{N}\right) - 1 \\
+&amp;= -1 - \frac{6k}{N} - \frac{9k^2}{N^2} + 5 + \frac{15k}{N} - 1 \\
+&amp;= 3 + \frac{9k}{N} - \frac{9k^2}{N^2}
+
+\end{aligned}\]</span>
+<p><span class="math display">\[
+f\left(1 + \frac{3k}{N}\right) \frac{3}{N} = \left(3 + \frac{9k}{N} - \frac{9k^2}{N^2}\right) \frac{3}{N} = \frac{9}{N} + \frac{27k}{N^2} - \frac{27k^2}{N^3}
+\]</span></p>
+<p>By substituting it back into the summation, we get: <span class="math display">\[
+A = \lim_{N \to \infty} \sum_{k=1}^{N} \left(\frac{9}{N} + \frac{27k}{N^2} - \frac{27k^2}{N^3}\right)
+\]</span></p>
+<p>Now, we can split the summation into three separate summations: <span class="math display">\[
+A = \lim_{N \to \infty} \left( \sum_{k=1}^{N} \frac{9}{N} + \sum_{k=1}^{N} \frac{27k}{N^2} - \sum_{k=1}^{N} \frac{27k^2}{N^3} \right)
+\]</span></p>
+<p>Now, we can simplify each summation using the formulas for the sum of the first <span class="math inline">\(N\)</span> natural numbers and the sum of the squares of the first <span class="math inline">\(N\)</span> natural numbers:</p>
+<span class="math display">\[\begin{aligned}
+\sum_{k=1}^{N} \frac{9}{N}
+  &amp;= 9 \\
+
+\sum_{k=1}^{N} \frac{27k}{N^2}
+  &amp;= \frac{27}{N^2} \sum_{k=1}^{N} k = \frac{27}{N^2} \cdot \frac{N(N+1)}{2} \\
+  &amp;= \frac{27(N+1)}{2N} \\
+
+\sum_{k=1}^{N} \frac{27k^2}{N^3}
+  &amp;= \frac{27}{N^3} \sum_{k=1}^{N} k^2 = \frac{27}{N^3} \cdot \frac{N(N+1)(2N+1)}{6} \\
+  &amp;= \frac{9(N+1)(2N+1)}{2N^2}
+\end{aligned}\]</span>
+<p>We can substitute these back into the expression for <span class="math inline">\(A\)</span>:</p>
+<span class="math display">\[\begin{aligned}
+  A &amp;= \lim_{N \to \infty} \left( 9 + \frac{27(N+1)}{2N} - \frac{9(N+1)(2N+1)}{2N^2} \right) \\
+  &amp;= \lim_{N \to \infty} \left(  \frac{18N^2 + 27N^2 + 27N - (18N^2+27N+9)}{2N^2} \right) \\
+  &amp;= \lim_{N \to \infty} \left(  \frac{27}{2} - \frac{9}{2N^2} \right)\\
+\end{aligned}\]</span>
+<p>Finally, we can take the limit as <span class="math inline">\(N\)</span> approaches infinity: <span class="math display">\[
+A = \frac{27}{2}
+\]</span></p>
+<p>Well, that was easy enough. And this result is infact correct. You can verify it by using integration.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We used squares to approximate the area under the curve, but we can also use trapezoids to get a better approximation. The process is the same, we just need to use the formula for the area of a trapezoid instead of the area of a rectangle. Try it …</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lesson learned
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If we want to find a arbitary shape area, we can devide it to <strong>rectangles</strong> (or <strong>trapezoids</strong>), find the area of each rectangle, and sum them up. As we increase the number of rectangles (i.e making the rectangles <strong>infinitesimally small</strong>), the approximation gets better and better, and in the limit, we get the exact area of the shape.</p>
+</div>
+</div>
 
 
 </section>
