@@ -82,5 +82,12 @@
     "title": "Introduction to Calculus",
     "section": "Definition: Indefinite Integral",
     "text": "Definition: Indefinite Integral\nIf \\(F'(x)=f(x)\\) on an interval, then \\(F\\) is called an antiderivative of \\(f\\).\nThe indefinite integral of \\(f\\) is the family of all antiderivatives:\n\\[\n\\int f(x)\\,dx = F(x) + C.\n\\]"
+  },
+  {
+    "objectID": "index.html#definition-fundamental-theorem-of-calculus",
+    "href": "index.html#definition-fundamental-theorem-of-calculus",
+    "title": "Introduction to Calculus",
+    "section": "Definition: Fundamental Theorem of Calculus",
+    "text": "Definition: Fundamental Theorem of Calculus\n\nLet \\(f:[a,b] \\to \\mathbb{R}\\) be a continuous function.\n\nPart I\nDefine the function\n\\[\nF(x) = \\int_a^x f(t)\\,dt\n\\]\nfor \\(x \\in [a,b]\\). Then \\(F\\) is differentiable on \\((a,b)\\), and\n\\[\nF'(x) = f(x)\n\\]\nfor every \\(x \\in (a,b)\\).\n\n\nPart II\nLet \\(F\\) be any antiderivative of \\(f\\) on \\([a,b]\\), meaning\n\\[\nF'(x) = f(x)\n\\]\nfor all \\(x \\in (a,b)\\). Then\n\\[\n\\int_a^b f(x)\\,dx = F(b) - F(a).\n\\]"
   }
 ]

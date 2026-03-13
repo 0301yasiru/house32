@@ -129,7 +129,6 @@ window.Quarto = {
   </ul></li>
   <li><a href="#symbolizing-the-process" id="toc-symbolizing-the-process" class="nav-link" data-scroll-target="#symbolizing-the-process">Symbolizing the process</a></li>
   <li><a href="#does-this-process-has-a-reverse" id="toc-does-this-process-has-a-reverse" class="nav-link" data-scroll-target="#does-this-process-has-a-reverse">Does this process has a reverse?</a></li>
-  <li><a href="#fundamental-theorem-of-calculus-formalized" id="toc-fundamental-theorem-of-calculus-formalized" class="nav-link" data-scroll-target="#fundamental-theorem-of-calculus-formalized">Fundamental Theorem of Calculus (Formalized)</a></li>
   <li><a href="#making-calculus-practical" id="toc-making-calculus-practical" class="nav-link" data-scroll-target="#making-calculus-practical">Making Calculus Practical</a>
   <ul class="collapse">
   <li><a href="#lets-find-the-derivative-of-some-common-functions" id="toc-lets-find-the-derivative-of-some-common-functions" class="nav-link" data-scroll-target="#lets-find-the-derivative-of-some-common-functions">Let’s find the derivative of some common functions</a></li>
@@ -140,6 +139,7 @@ window.Quarto = {
   <li><a href="#definition-derivative" id="toc-definition-derivative" class="nav-link" data-scroll-target="#definition-derivative">Definition: Derivative</a></li>
   <li><a href="#definition-riemann-integral" id="toc-definition-riemann-integral" class="nav-link" data-scroll-target="#definition-riemann-integral">Definition: Riemann Integral</a></li>
   <li><a href="#definition-indefinite-integral" id="toc-definition-indefinite-integral" class="nav-link" data-scroll-target="#definition-indefinite-integral">Definition: Indefinite Integral</a></li>
+  <li><a href="#definition-fundamental-theorem-of-calculus" id="toc-definition-fundamental-theorem-of-calculus" class="nav-link" data-scroll-target="#definition-fundamental-theorem-of-calculus">Definition: Fundamental Theorem of Calculus</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -488,36 +488,6 @@ F(x+\Delta x) = F(x) + f\left(x+\Delta x\right) \Delta x
 <p>Let’s call this process of finding the reverse of the integration as <strong>differentiation</strong>. We can also call it the <strong>derivative</strong> of <span class="math inline">\(F(x)\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
 <hr>
 </section>
-<section id="fundamental-theorem-of-calculus-formalized" class="level1">
-<h1>Fundamental Theorem of Calculus (Formalized)</h1>
-<div class="theorem">
-<p>Let <span class="math inline">\(f:[a,b] \to \mathbb{R}\)</span> be a continuous function.</p>
-<section id="part-i" class="level3">
-<h3 class="anchored" data-anchor-id="part-i">Part I</h3>
-<p>Define the function</p>
-<p><span class="math display">\[
-F(x) = \int_a^x f(t)\,dt
-\]</span></p>
-<p>for <span class="math inline">\(x \in [a,b]\)</span>. Then <span class="math inline">\(F\)</span> is differentiable on <span class="math inline">\((a,b)\)</span>, and</p>
-<p><span class="math display">\[
-F'(x) = f(x)
-\]</span></p>
-<p>for every <span class="math inline">\(x \in (a,b)\)</span>.</p>
-</section>
-<section id="part-ii" class="level3">
-<h3 class="anchored" data-anchor-id="part-ii">Part II</h3>
-<p>Let <span class="math inline">\(F\)</span> be any antiderivative of <span class="math inline">\(f\)</span> on <span class="math inline">\([a,b]\)</span>, meaning</p>
-<p><span class="math display">\[
-F'(x) = f(x)
-\]</span></p>
-<p>for all <span class="math inline">\(x \in (a,b)\)</span>. Then</p>
-<p><span class="math display">\[
-\int_a^b f(x)\,dx = F(b) - F(a).
-\]</span></p>
-</section>
-</div>
-<hr>
-</section>
 <section id="making-calculus-practical" class="level1">
 <h1>Making Calculus Practical</h1>
 <p>We just went through a long process to find the area under a function <span class="math inline">\(f(x)\)</span>. Technically, we now have a <strong>complete method</strong> to compute areas using limits and summations.</p>
@@ -743,6 +713,36 @@ S_N = \sum_{k=1}^{N} f(c_k)\,\Delta x_k.
 <p><span class="math display">\[
 \int f(x)\,dx = F(x) + C.
 \]</span></p>
+</section>
+<section id="definition-fundamental-theorem-of-calculus" class="level2">
+<h2 class="anchored" data-anchor-id="definition-fundamental-theorem-of-calculus">Definition: Fundamental Theorem of Calculus</h2>
+<div class="theorem">
+<p>Let <span class="math inline">\(f:[a,b] \to \mathbb{R}\)</span> be a continuous function.</p>
+<section id="part-i" class="level3">
+<h3 class="anchored" data-anchor-id="part-i">Part I</h3>
+<p>Define the function</p>
+<p><span class="math display">\[
+F(x) = \int_a^x f(t)\,dt
+\]</span></p>
+<p>for <span class="math inline">\(x \in [a,b]\)</span>. Then <span class="math inline">\(F\)</span> is differentiable on <span class="math inline">\((a,b)\)</span>, and</p>
+<p><span class="math display">\[
+F'(x) = f(x)
+\]</span></p>
+<p>for every <span class="math inline">\(x \in (a,b)\)</span>.</p>
+</section>
+<section id="part-ii" class="level3">
+<h3 class="anchored" data-anchor-id="part-ii">Part II</h3>
+<p>Let <span class="math inline">\(F\)</span> be any antiderivative of <span class="math inline">\(f\)</span> on <span class="math inline">\([a,b]\)</span>, meaning</p>
+<p><span class="math display">\[
+F'(x) = f(x)
+\]</span></p>
+<p>for all <span class="math inline">\(x \in (a,b)\)</span>. Then</p>
+<p><span class="math display">\[
+\int_a^b f(x)\,dx = F(b) - F(a).
+\]</span></p>
+</section>
+</div>
+<hr>
 
 
 </section>
