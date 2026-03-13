@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Yasiru Karunanayaka">
-<meta name="dcterms.date" content="2026-03-12">
+<meta name="dcterms.date" content="2026-03-13">
 
 <title>Introduction to Calculus – Just Geometry</title>
 <style>
@@ -129,6 +129,18 @@ window.Quarto = {
   </ul></li>
   <li><a href="#symbolizing-the-process" id="toc-symbolizing-the-process" class="nav-link" data-scroll-target="#symbolizing-the-process">Symbolizing the process</a></li>
   <li><a href="#does-this-process-has-a-reverse" id="toc-does-this-process-has-a-reverse" class="nav-link" data-scroll-target="#does-this-process-has-a-reverse">Does this process has a reverse?</a></li>
+  <li><a href="#fundamental-theorem-of-calculus-formalized" id="toc-fundamental-theorem-of-calculus-formalized" class="nav-link" data-scroll-target="#fundamental-theorem-of-calculus-formalized">Fundamental Theorem of Calculus (Formalized)</a></li>
+  <li><a href="#making-calculus-practical" id="toc-making-calculus-practical" class="nav-link" data-scroll-target="#making-calculus-practical">Making Calculus Practical</a>
+  <ul class="collapse">
+  <li><a href="#lets-find-the-derivative-of-some-common-functions" id="toc-lets-find-the-derivative-of-some-common-functions" class="nav-link" data-scroll-target="#lets-find-the-derivative-of-some-common-functions">Let’s find the derivative of some common functions</a></li>
+  <li><a href="#shall-we-try-the-same-example-again" id="toc-shall-we-try-the-same-example-again" class="nav-link" data-scroll-target="#shall-we-try-the-same-example-again">Shall we try the same example again?</a></li>
+  </ul></li>
+  <li><a href="#for-the-curious-the-formal-definitions" id="toc-for-the-curious-the-formal-definitions" class="nav-link" data-scroll-target="#for-the-curious-the-formal-definitions">For the Curious: The Formal Definitions</a>
+  <ul class="collapse">
+  <li><a href="#definition-derivative" id="toc-definition-derivative" class="nav-link" data-scroll-target="#definition-derivative">Definition: Derivative</a></li>
+  <li><a href="#definition-riemann-integral" id="toc-definition-riemann-integral" class="nav-link" data-scroll-target="#definition-riemann-integral">Definition: Riemann Integral</a></li>
+  <li><a href="#definition-indefinite-integral" id="toc-definition-indefinite-integral" class="nav-link" data-scroll-target="#definition-indefinite-integral">Definition: Indefinite Integral</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -155,7 +167,7 @@ window.Quarto = {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 12, 2026</p>
+      <p class="date">March 13, 2026</p>
     </div>
   </div>
   
@@ -471,11 +483,269 @@ F(x+\Delta x) = F(x) + f\left(x+\Delta x\right) \Delta x
 \lim_{\Delta x \to 0} \frac{F(x+\Delta x) - F(x)}{\Delta x} = \lim_{\Delta x \to 0} f\left(x+\Delta x\right) = f(x)
 \]</span></p>
 <p><span class="math display">\[
-\boxed{f(x) = \lim_{\Delta x \to 0} \frac{F(x+\Delta x) - F(x)}{\Delta x} = \frac{dF(x)}{dx}}
+\boxed{f(x) = \lim_{\Delta x \to 0} \frac{F(x+\Delta x) - F(x)}{\Delta x} = \frac{dF(x)}{dx} = F'(x)}
 \]</span></p>
 <p>Let’s call this process of finding the reverse of the integration as <strong>differentiation</strong>. We can also call it the <strong>derivative</strong> of <span class="math inline">\(F(x)\)</span> with respect to <span class="math inline">\(x\)</span>.</p>
+<hr>
+</section>
+<section id="fundamental-theorem-of-calculus-formalized" class="level1">
+<h1>Fundamental Theorem of Calculus (Formalized)</h1>
+<div class="theorem">
+<p>Let <span class="math inline">\(f:[a,b] \to \mathbb{R}\)</span> be a continuous function.</p>
+<section id="part-i" class="level3">
+<h3 class="anchored" data-anchor-id="part-i">Part I</h3>
+<p>Define the function</p>
+<p><span class="math display">\[
+F(x) = \int_a^x f(t)\,dt
+\]</span></p>
+<p>for <span class="math inline">\(x \in [a,b]\)</span>. Then <span class="math inline">\(F\)</span> is differentiable on <span class="math inline">\((a,b)\)</span>, and</p>
+<p><span class="math display">\[
+F'(x) = f(x)
+\]</span></p>
+<p>for every <span class="math inline">\(x \in (a,b)\)</span>.</p>
+</section>
+<section id="part-ii" class="level3">
+<h3 class="anchored" data-anchor-id="part-ii">Part II</h3>
+<p>Let <span class="math inline">\(F\)</span> be any antiderivative of <span class="math inline">\(f\)</span> on <span class="math inline">\([a,b]\)</span>, meaning</p>
+<p><span class="math display">\[
+F'(x) = f(x)
+\]</span></p>
+<p>for all <span class="math inline">\(x \in (a,b)\)</span>. Then</p>
+<p><span class="math display">\[
+\int_a^b f(x)\,dx = F(b) - F(a).
+\]</span></p>
+</section>
+</div>
+<hr>
+</section>
+<section id="making-calculus-practical" class="level1">
+<h1>Making Calculus Practical</h1>
+<p>We just went through a long process to find the area under a function <span class="math inline">\(f(x)\)</span>. Technically, we now have a <strong>complete method</strong> to compute areas using limits and summations.</p>
+<p>But there is a problem.</p>
+<p>Imagine repeating that entire process every time we want the area under a curve. Even for simple functions, it would be painfully slow. Luckily, the <strong>Fundamental Theorem of Calculus</strong> gives us a shortcut. It tells us that integration and differentiation are <strong>inverse operations</strong>. So instead of computing the sum of infinitely many rectangles every time, we can do something much easier:</p>
+<ol type="1">
+<li>Find a function <span class="math inline">\(F(x)\)</span> whose derivative is <span class="math inline">\(f(x)\)</span>.</li>
+<li>Evaluate <span class="math inline">\(F(b) - F(a)\)</span>.</li>
+</ol>
+<p>In other words, if we know the <strong>derivatives of functions</strong>, we can reverse the process to compute integrals instantly.</p>
+<p>Because of this, mathematicians spent centuries computing derivatives of common functions and organizing them into <strong>tables and rules</strong>.</p>
+<p>Once we know these derivative rules, calculus becomes dramatically faster and more powerful.</p>
+<section id="lets-find-the-derivative-of-some-common-functions" class="level2">
+<h2 class="anchored" data-anchor-id="lets-find-the-derivative-of-some-common-functions">Let’s find the derivative of some common functions</h2>
+<ol type="1">
+<li><span class="math inline">\(f(x) = x^2\)</span></li>
+</ol>
+<span class="math display">\[\begin{aligned}
+f'(x)
+&amp;= \lim_{\Delta x \to 0} \frac{(x+\Delta x)^2 - x^2}{\Delta x} = \lim_{\Delta x \to 0} \frac{x^2 + 2x\Delta x + (\Delta x)^2 - x^2}{\Delta x} \\
+&amp;= \lim_{\Delta x \to 0} \frac{2x\Delta x + (\Delta x)^2}{\Delta x} = \lim_{\Delta x \to 0} (2x + \Delta x) \\
+&amp;= 2x
+\end{aligned}\]</span>
+<ol start="2" type="1">
+<li><span class="math inline">\(f(x) = x^3\)</span></li>
+</ol>
+<span class="math display">\[\begin{aligned}
+f'(x)
+&amp;= \lim_{\Delta x \to 0} \frac{(x+\Delta x)^3 - x^3}{\Delta x} = \lim_{\Delta x \to 0} \frac{x^3 + 3x^2\Delta x + 3x(\Delta x)^2 + (\Delta x)^3 - x^3}{\Delta x} \\
+&amp;= \lim_{\Delta x \to 0} \frac{3x^2\Delta x + 3x(\Delta x)^2 + (\Delta x)^3}{\Delta x} = \lim_{\Delta x \to 0} \left(3x^2 + 3x\Delta x + (\Delta x)^2\right) \\
+&amp;= 3x^2
+\end{aligned}\]</span>
+<ol start="3" type="1">
+<li><span class="math inline">\(f(x) = x^n\)</span></li>
+</ol>
+<span class="math display">\[\begin{aligned}
+f'(x)
+&amp;= \lim_{\Delta x \to 0} \frac{(x+\Delta x)^n - x^n}{\Delta x} = \lim_{\Delta x \to 0} \frac{x^n + nx^{n-1}\Delta x + \cdots + (\Delta x)^n - x^n}{\Delta x} \\
+&amp;= \lim_{\Delta x \to 0} \frac{nx^{n-1}\Delta x + \cdots + (\Delta x)^n}{\Delta x} = \lim_{\Delta x \to 0} \left(nx^{n-1} + \cdots + (\Delta x)^{n-1}\right) \\
+&amp;= nx^{n-1}
+\end{aligned}\]</span>
+<ol start="4" type="1">
+<li><span class="math inline">\(f(x) = e^x\)</span></li>
+</ol>
+<span class="math display">\[\begin{aligned}
+f'(x)
+&amp;= \lim_{\Delta x \to 0} \frac{e^{x+\Delta x} - e^x}{\Delta x} = \lim_{\Delta x \to 0} \frac{e^x e^{\Delta x} - e^x}{\Delta x} = e^x \lim_{\Delta x \to 0} \frac{e^{\Delta x} - 1}{\Delta x} \\
+&amp;= e^x
+\end{aligned}\]</span>
+<ol start="5" type="1">
+<li><span class="math inline">\(f(x) = \sin x\)</span></li>
+</ol>
+<span class="math display">\[\begin{aligned}
+f'(x)
+&amp;= \lim_{\Delta x \to 0} \frac{\sin(x+\Delta x) - \sin x}{\Delta x} = \lim_{\Delta x \to 0} \frac{\sin x \cos \Delta x + \cos x \sin \Delta x - \sin x}{\Delta x} \\
+&amp;= \lim_{\Delta x \to 0} \left(
+\sin x \cdot \frac{\cos \Delta x - 1}{\Delta x}
++
+\cos x \cdot \frac{\sin \Delta x}{\Delta x}
+\right) \\
+&amp;= \sin x \lim_{\Delta x \to 0} \frac{\cos \Delta x - 1}{\Delta x}
++ \cos x \lim_{\Delta x \to 0} \frac{\sin \Delta x}{\Delta x} \\
+&amp;= \cos x
+\end{aligned}\]</span>
+<p>Cool, we have found the derivatives of some common functions. We can use these derivatives to find the area under the curve of these functions using the Fundamental Theorem of Calculus. So here is a tabule of some common functions and their derivatives and integrals:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Function <span class="math inline">\(f(x)\)</span></th>
+<th>Derivative <span class="math inline">\(f'(x)\)</span></th>
+<th>Integral <span class="math inline">\(\int f(x)\,dx\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(c\)</span></td>
+<td><span class="math inline">\(0\)</span></td>
+<td><span class="math inline">\(cx + C\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(x^n\)</span></td>
+<td><span class="math inline">\(nx^{n-1}\)</span></td>
+<td><span class="math inline">\(\dfrac{x^{n+1}}{n+1} + C,\quad n \neq -1\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\dfrac{1}{x}\)</span></td>
+<td><span class="math inline">\(-\dfrac{1}{x^2}\)</span></td>
+<td><span class="math inline">\(\ln|x| + C\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sqrt{x}\)</span></td>
+<td><span class="math inline">\(\dfrac{1}{2\sqrt{x}}\)</span></td>
+<td><span class="math inline">\(\dfrac{2}{3}x^{3/2} + C\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(e^x\)</span></td>
+<td><span class="math inline">\(e^x\)</span></td>
+<td><span class="math inline">\(e^x + C\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(a^x\)</span></td>
+<td><span class="math inline">\(a^x \ln a\)</span></td>
+<td><span class="math inline">\(\dfrac{a^x}{\ln a} + C,\quad a&gt;0,\ a\neq 1\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\sin x\)</span></td>
+<td><span class="math inline">\(\cos x\)</span></td>
+<td><span class="math inline">\(-\cos x + C\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\cos x\)</span></td>
+<td><span class="math inline">\(-\sin x\)</span></td>
+<td><span class="math inline">\(\sin x + C\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\tan x\)</span></td>
+<td><span class="math inline">\(\sec^2 x\)</span></td>
+<td><span class="math inline">\(\ln|\sec x| + C\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\sec^2 x\)</span></td>
+<td><span class="math inline">\(2\sec^2 x \tan x\)</span></td>
+<td><span class="math inline">\(\tan x + C\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\ln x\)</span></td>
+<td><span class="math inline">\(\dfrac{1}{x}\)</span></td>
+<td><span class="math inline">\(x\ln x - x + C\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="shall-we-try-the-same-example-again" class="level2">
+<h2 class="anchored" data-anchor-id="shall-we-try-the-same-example-again">Shall we try the same example again?</h2>
+<p>Let’s say we want to find the area under the curve of the function <span class="math inline">\(f(x) = -x^2 + 5x - 1\)</span> between <span class="math inline">\(x=1\)</span> and <span class="math inline">\(x=4\)</span>. Then, we can use the integral to find the area:</p>
+<span class="math display">\[\begin{aligned}
+A &amp;= \int_1^4 (-x^2 + 5x - 1) dx \\
+&amp;= \left[-\frac{x^3}{3} + \frac{5x^2}{2} - x\right]_1^4 \\
+&amp;= \left(-\frac{64}{3} + 40 - 4\right) - \left(-\frac{1}{3} + \frac{5}{2} - 1\right) \\
+&amp;= \frac{27}{2}
+\end{aligned}\]</span>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Lesson learned
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>We can find the area under a curve by approximating it with rectangles and taking the limit as the number of rectangles approaches infinity.</li>
+<li>The Fundamental Theorem of Calculus tells us that integration and differentiation are inverse operations, which allows us to compute integrals much more easily by finding antiderivatives.</li>
+<li>Knowing the derivatives of common functions allows us to quickly compute areas under curves without having to go through the entire limit process every time.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Important Summary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If we do not know how to find the length, area, volume, any parameter of a changing function, we can segment it into small pieces, which we can easily find the parameter of, and then sum them up. As we make the pieces smaller and smaller, our approximation gets better and better, and in the limit, we get the exact value of the parameter we are trying to find.</p>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="for-the-curious-the-formal-definitions" class="level1">
+<h1>For the Curious: The Formal Definitions</h1>
+<p>Throughout this article we developed the ideas of calculus using intuition, geometry, and limits. Mathematicians, however, prefer to define these concepts in a completely precise way.</p>
+<p>Here are the formal definitions.</p>
+<section id="definition-derivative" class="level2">
+<h2 class="anchored" data-anchor-id="definition-derivative">Definition: Derivative</h2>
+<p>Let <span class="math inline">\(f\)</span> be a function defined on an open interval containing <span class="math inline">\(x\)</span>.</p>
+<p>The <strong>derivative</strong> of <span class="math inline">\(f\)</span> at <span class="math inline">\(x\)</span> is defined as</p>
+<p><span class="math display">\[
+f'(x) =
+\lim_{h \to 0}
+\frac{f(x+h)-f(x)}{h}
+\]</span></p>
+<p>provided that this limit exists.</p>
+<p>If this limit exists, we say that <strong><span class="math inline">\(f\)</span> is differentiable at <span class="math inline">\(x\)</span></strong>.</p>
+<hr>
+</section>
+<section id="definition-riemann-integral" class="level2">
+<h2 class="anchored" data-anchor-id="definition-riemann-integral">Definition: Riemann Integral</h2>
+<p>Let <span class="math inline">\(f:[a,b] \rightarrow \mathbb{R}\)</span> be a bounded function.</p>
+<p>Divide the interval <span class="math inline">\([a,b]\)</span> into <span class="math inline">\(N\)</span> subintervals</p>
+<p><span class="math display">\[
+a = x_0 &lt; x_1 &lt; x_2 &lt; \ldots &lt; x_N = b
+\]</span></p>
+<p>and define</p>
+<p><span class="math display">\[
+\Delta x_k = x_k - x_{k-1}.
+\]</span></p>
+<p>Choose any point <span class="math inline">\(c_k \in [x_{k-1},x_k]\)</span> and construct the sum</p>
+<p><span class="math display">\[
+S_N = \sum_{k=1}^{N} f(c_k)\,\Delta x_k.
+\]</span></p>
+<p>If the limit</p>
+<p><span class="math display">\[
+\lim_{N\to\infty} S_N
+\]</span></p>
+<p>exists and is independent of the choice of <span class="math inline">\(c_k\)</span>, then <span class="math inline">\(f\)</span> is <strong>Riemann integrable</strong> on <span class="math inline">\([a,b]\)</span> and we define</p>
+<p><span class="math display">\[
+\int_a^b f(x)\,dx =
+\lim_{N\to\infty}
+\sum_{k=1}^{N} f(c_k)\,\Delta x_k.
+\]</span></p>
+<hr>
+</section>
+<section id="definition-indefinite-integral" class="level2">
+<h2 class="anchored" data-anchor-id="definition-indefinite-integral">Definition: Indefinite Integral</h2>
+<p>If <span class="math inline">\(F'(x)=f(x)\)</span> on an interval, then <span class="math inline">\(F\)</span> is called an <strong>antiderivative</strong> of <span class="math inline">\(f\)</span>.</p>
+<p>The <strong>indefinite integral</strong> of <span class="math inline">\(f\)</span> is the family of all antiderivatives:</p>
+<p><span class="math display">\[
+\int f(x)\,dx = F(x) + C.
+\]</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
